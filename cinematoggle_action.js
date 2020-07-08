@@ -1,13 +1,13 @@
 <script>
 
-// var cinematoggle_button = document.createElement('div');
-// cinematoggle_button.HTMLElementObject.id = "cinematoggle";
-//
-// var main_section = document.getElementById("wrap").appendChild(cinematoggle_button);
+var cinematoggle_button = document.createElement('div');
+var icon_span = document.createElement('span');
 
-var cinematoggle_button = $("<div></div>")
+icon_span.className = "glyphicon glyphicon-new-window";
+cinematoggle_button.appendChild(icon_span);
 
-$("body").append(cinematoggle_button)
+cinematoggle_button.HTMLElementObject.id = "cinematoggle";
 
-cinematoggle_button.HTMLElementObject.id = "cinematoggle"
+var body = document.getElementByTagName("BODY")[0].appendChild(cinematoggle_button);
+
 </script>
