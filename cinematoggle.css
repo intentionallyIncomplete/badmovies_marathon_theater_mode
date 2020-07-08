@@ -1,3 +1,4 @@
+<style>
 #cinematoggle {
     position: fixed !important;
     right: 2px;
@@ -8,3 +9,5 @@
     z-index:3000;
     cursor:pointer;
 }
+
+</style>
