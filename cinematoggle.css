@@ -6,7 +6,7 @@ body.cinemachat .toggle-label { display: none; }
 body.cinemachat .dropLabel    { display: none; }
 body.cinemachat #videowrap-header { display: none; }
 
-#cinematoggle {
+#cinemaToggleDiv {
     position: fixed !important;
     right: 2px;
     top: 0 !important;
@@ -17,10 +17,10 @@ body.cinemachat #videowrap-header { display: none; }
     cursor:pointer;
 }
 
-body.cinemachat #cinematoggle {
+body.cinemachat #cinemaToggleDiv {
     text-shadow: 0 0 3px white;
 }
-body.cinemachat.synchtube #cinematoggle {
+body.cinemachat.synchtube #cinemaToggleDiv {
     right: 402px;
 }
 
