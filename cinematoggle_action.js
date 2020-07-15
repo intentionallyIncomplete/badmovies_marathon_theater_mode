@@ -10,7 +10,7 @@
         $('a[onclick*="chatOnly"]').parent().after($("<li>").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "javascript:toggleChat()").text("Remove Chat")))
     }
     ({
-        host: "https://gitcdn.link/repo/intentionallyIncomplete/quiglys_movie_repo/master/cinematoggle.css",
+        host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/fb2781e5cda196a53dbce4639f8a60c8db5774fd/cinematoggle.css",
         initialize: function() {
             if (CLIENT.cinemaMode) {
                 return
@@ -59,7 +59,7 @@
             $("#chatline").trigger("registerCommand", ["cinema", this.handleCommand.bind(this)])
         },
         loadStyle: function() {
-            $.ajax(this.host + "cinema.css?cache" + Math.random()).done((data=>{
+            $.ajax(this.host).done((data=>{
                 this.createButtons();
                 this.createStyle(data);
                 this.registerCommand();
