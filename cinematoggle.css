@@ -9,7 +9,11 @@
     border: 2px solid rgba(255,255,255,0.5) !important;
     z-index:3000;
     cursor:pointer; */
-    
+
+}
+
+.navbar-inverse {
+  background-color: #e6e6e6;
 }
 
 </style>
