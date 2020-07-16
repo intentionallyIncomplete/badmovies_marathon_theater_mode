@@ -18,7 +18,7 @@
         $('a[onclick*="chatOnly"]').parent().after($("<li>").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "javascript:toggleChat()").text("Remove Chat")))
     }
     ({
-        host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/f6e720a0bda2ce054ffcf30eb0f08e6938761e44/cinematoggle.css",
+        host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/54c3f3eec8221c8a578e3aa2d2d29af801bb8327/cinematoggle.css",
         initialize: function() {
             if (CLIENT.cinemaMode) {
                 return
