@@ -14,7 +14,7 @@ body.cinemachat #videowrap-header { display: none; }
     padding: 1px 5px !important;
     border: 2px solid rgba(255,255,255,0.5) !important;
     z-index:3000;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #drinkbarwrap {
@@ -31,12 +31,13 @@ body.cinemachat.synchtube #cinematoggle {
 }
 
 body.cinemachat #chatwrap {
-    position:fixed !important;
+    /* position: fixed !important; */
+    position: relative;
     top:0 !important;
-    padding:0px !important;
+    padding: 0px !important;
     width: 400px !important;
     height: 90% !important;
-    z-index:3001 !important;
+    z-index: 3001 !important;
     background-color: #222222 !important;
 }
 body.cinemachat:not(.synchtube) #chatwrap { left:0 !important; }
