@@ -19,6 +19,8 @@ body.cinemachat #videowrap-header { display: none; }
 
 #drinkbarwrap {
   height: 10% !important;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 body.cinemachat #cinematoggle {
@@ -67,7 +69,7 @@ body.cinemachat #videowrap {
     position: fixed !important;
     /* top: 0 !important; */
     bottom: 0 !important;
-    padding:0 !important;
+    padding: 0 !important;
     z-index: 3000 !important;
     background-color: black;
     height: 90% !important;
