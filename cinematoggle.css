@@ -7,7 +7,7 @@ body.cinemachat .dropLabel    { display: none; }
 body.cinemachat #videowrap-header { display: none; }
 body.cinemachat #controlsrow {  display: none;  }
 body.cinemachat #playlistrow {  display: none;  }
-body.cinemachat #navbar { display: none;  }
+body.cinemachat .navbar { display: none;  }
 
 body {
   background-color: black !important;
