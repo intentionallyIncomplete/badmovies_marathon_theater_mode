@@ -21,6 +21,7 @@ body.cinemachat #videowrap-header { display: none; }
   height: 10% !important;
   padding-bottom: 50px;
   margin-bottom: 50px;
+  position: fixed !important;
 }
 
 body.cinemachat #cinematoggle {
@@ -31,21 +32,20 @@ body.cinemachat.synchtube #cinematoggle {
 }
 
 body.cinemachat #chatwrap {
-    /* position: fixed !important; */
-    position: relative;
-    top:0 !important;
+    position: fixed !important;
+    top: 0 !important;
     padding: 0px !important;
     width: 400px !important;
     height: 90% !important;
     z-index: 3001 !important;
-    background-color: #222222 !important;
+    background-color: black !important;
 }
 body.cinemachat:not(.synchtube) #chatwrap { left:0 !important; }
 body.cinemachat.synchtube #chatwrap { right:0 !important; }
 
 body.cinemachat #chatwrap #messagebuffer,
 body.cinemachat #chatwrap #userlist {
-    height: calc(100% - 59px) !important;
+    height: calc(90% - 59px) !important;
 }
 
 body.cinemachat #chatline {
