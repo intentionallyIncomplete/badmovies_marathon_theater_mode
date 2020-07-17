@@ -45,7 +45,8 @@
             })
         },
         createStyle: function(body) {
-            this.style = $("<style>").attr("type", "text/css").attr("id", "cinemaStyle").html(body).appendTo("head")
+            this.style = $("<style>").attr("type", "text/css").attr("id", "cinemaStyle").html(body).appendTo("head");
+            $('<button class="btn btn-sm btn-default" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();">Emote List</button>').appendTo("#chatheader");
         },
         handleCommand(message, target) {
             var params = message.substring(1).replace(/cinema ?/, "").trim();
@@ -81,7 +82,3 @@
         }
     }).initialize()
 });
-
-// God I hope this works
-
-$('<button class="btn btn-sm btn-default" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();">Emote List</button>').appendTo("#chatheader");
