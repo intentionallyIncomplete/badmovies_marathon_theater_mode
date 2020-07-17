@@ -6,6 +6,64 @@
 **@preserve
 */
 "use strict";
+function removeUntilNext() {
+    socket.once("changeMedia", unremoveVideo);
+    return removeVideo()
+}
+function removeVideo(event) {
+    try {
+        PLAYER.setVolume(0);
+        if (PLAYER.type === "rv") {
+            killVideoUntilItIsDead($(PLAYER.player))
+        }
+    } catch (e) {
+        console.log(e)
+    }
+    CLIENT.removedOnGDrive = PLAYER.mediaType == "gd" ? true : false;
+    $("#videowrap").hide().attr("id", "videowrap_disabled");
+    $("#ytapiplayer").attr("id", "ytapiplayer_disabled");
+    $("#chatwrap").removeClass("col-lg-5 col-md-5").addClass("col-md-12");
+    $('a[onclick*="removeVideo"]').attr("onclick", "javascript:unremoveVideo(event)").text("Restore video");
+    if (event)
+        event.preventDefault()
+}
+function unremoveVideo(event) {
+    setTimeout(function() {
+        PLAYER.setVolume(.33)
+    }, 250);
+    socket.emit("playerReady");
+    $("#chatwrap").addClass("col-lg-5 col-md-5").removeClass("col-md-12");
+    $("#videowrap_disabled").attr("id", "videowrap").show();
+    $("#ytapiplayer_disabled").attr("id", "ytapiplayer");
+    $('a[onclick*="removeVideo"]').attr("onclick", "javascript:removeVideo(event)").text("Remove video");
+    if (event)
+        event.preventDefault();
+    if (CLIENT.removedOnGDrive) {
+        CLIENT.removedOnGDrive = false;
+        setTimeout(function() {
+            $("#mediarefresh").click()
+        }, 1e3)
+    }
+}
+function toggleChat() {
+    if ($("#chatwrap").parent().attr("id") === "main") {
+        $("#chatwrap").appendTo("#customSettingsStaging");
+        $("#videowrap").css("margin", "0 auto");
+        $("#videowrap").css("float", "initial");
+        $("#videowrap").css("margin-bottom", "20px");
+        $('a[onclick*="toggleChat"]').text("Restore Chat");
+        return
+    }
+    if (!USEROPTS.layout.match(/synchtube/)) {
+        $("#chatwrap").prependTo("#main")
+    } else {
+        $("#chatwrap").appendTo("#main")
+    }
+    $("#videowrap").css("margin", "");
+    $("#videowrap").css("float", "");
+    $("#videowrap").css("margin-bottom", "");
+    $('a[onclick*="toggleChat"]').text("Remove Chat")
+}
 (function(CyTube_Layout) {
     return CyTube_Layout(window, document, window.jQuery, String)
 }
