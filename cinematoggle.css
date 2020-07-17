@@ -31,8 +31,8 @@ body.cinemachat #drinkbarwrap {
   position: relative;
 }
 
-body.cinemachat #emotelistbtn {
-  display: unset;
+body.cinemachat .inlineemote {
+  visibility: visible;
 }
 
 body.cinemachat .modal {
