@@ -31,6 +31,10 @@ body.cinemachat #drinkbarwrap {
   position: relative;
 }
 
+body.cinemachat #emotelistbtn {
+  display: unset;
+}
+
 body.cinemachat #cinematoggle {
     text-shadow: 0 0 3px white;
 }

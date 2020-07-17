@@ -46,7 +46,7 @@
         },
         createStyle: function(body) {
             this.style = $("<style>").attr("type", "text/css").attr("id", "cinemaStyle").html(body).appendTo("head");
-            $('<button class="btn btn-sm btn-default" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();">Emote List</button>').appendTo("#chatheader");
+            $('<button class="btn btn-sm btn-default" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();" style="display: none;">Emote List</button>').appendTo("#chatheader");
         },
         handleCommand(message, target) {
             var params = message.substring(1).replace(/cinema ?/, "").trim();
