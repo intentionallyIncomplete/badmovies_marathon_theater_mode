@@ -32,7 +32,7 @@ body.cinemachat #drinkbarwrap {
 }
 
 body.cinemachat .inlineemote {
-  visibility: visible;
+  visibility: visible !important;
 }
 
 body.cinemachat .modal {
