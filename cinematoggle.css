@@ -24,7 +24,7 @@ body {
     cursor: pointer;
 }
 
-#drinkbarwrap {
+body.cinemachat #drinkbarwrap {
   width: 400px !important;
   z-index: 3001;
   margin-top: -5%;
