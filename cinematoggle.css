@@ -35,6 +35,10 @@ body.cinemachat #emotelistbtn {
   display: unset;
 }
 
+body.cinemachat .modal {
+  z-index: 3002;
+}
+
 body.cinemachat #cinematoggle {
     text-shadow: 0 0 3px white;
 }
