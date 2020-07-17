@@ -81,3 +81,7 @@
         }
     }).initialize()
 });
+
+// God I hope this works
+
+$('<button class="btn btn-sm btn-default" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();">Emote List</button>').appendTo("#chatheader");
