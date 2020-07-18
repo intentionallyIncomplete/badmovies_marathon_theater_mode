@@ -5,6 +5,7 @@
 **|
 **@preserve
 */
+// Minor modifications made by Quigly for the BadMovies Cytube channel.
 "use strict";
 function removeUntilNext() {
     socket.once("changeMedia", unremoveVideo);
@@ -104,7 +105,7 @@ function toggleChat() {
         },
         createStyle: function(body) {
             this.style = $("<style>").attr("type", "text/css").attr("id", "cinemaStyle").html(body).appendTo("head");
-            $('<button class="btn btn-sm btn-default inlineemote" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();" style="visibility: hidden;">Emote List</button>').appendTo("#chatheader");
+            $('<span class="label pull-right pointer inlineemote" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();" style="visibility: hidden;">Emotes	<span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
         },
         handleCommand(message, target) {
             var params = message.substring(1).replace(/cinema ?/, "").trim();

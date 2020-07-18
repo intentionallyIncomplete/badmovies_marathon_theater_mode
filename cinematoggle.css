@@ -33,6 +33,7 @@ body.cinemachat #drinkbarwrap {
 
 body.cinemachat .inlineemote {
   visibility: visible !important;
+  background-color: #2d2d2d;
 }
 
 body.cinemachat .modal {
