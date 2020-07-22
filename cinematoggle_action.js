@@ -130,8 +130,8 @@ function toggleChat() {
         },
         // Added by Quigly
         // Adds HTML span element to the cheat header so emotes can be toggled while in cinemamode.
-        updateEmoteBtnLocation(){
-         $('<span id="emotelistbtn" style="visibility: hidden;" class="label pull-right pointer inlineemote">Emotes</span><span class="glyphicon glyphicon-picture"></span>').appendTo("#chatheader");
+        updateEmoteBtnLocation()  {
+          $('<span id="emotelistbtn" style="visibility: hidden;" class="label pull-right pointer inlineemote">Emotes <span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
         },
         loadStyle: function() {
             $.ajax(this.host).done((data=>{
