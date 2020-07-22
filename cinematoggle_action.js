@@ -77,7 +77,10 @@ function toggleChat() {
         $('a[onclick*="chatOnly"]').parent().after($("<li>").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "javascript:toggleChat()").text("Remove Chat")))
     }
     ({
-        host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/259f469d860d912862f51efb077ef8e065666a5f/cinematoggle.css",
+      // Updated to using GitHack for faster delivery.
+        // host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/259f469d860d912862f51efb077ef8e065666a5f/cinematoggle.css",
+
+        host: "https://raw.githack.com/intentionallyIncomplete/quiglys_movie_repo/master/cinematoggle.css",
         initialize: function() {
             if (CLIENT.cinemaMode) {
                 return
@@ -105,7 +108,6 @@ function toggleChat() {
         },
         createStyle: function(body) {
             this.style = $("<style>").attr("type", "text/css").attr("id", "cinemaStyle").html(body).appendTo("head");
-            $('<span class="label pull-right pointer inlineemote" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();" style="visibility: hidden;">Emotes	<span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
         },
         handleCommand(message, target) {
             var params = message.substring(1).replace(/cinema ?/, "").trim();
@@ -126,11 +128,24 @@ function toggleChat() {
         registerCommand() {
             $("#chatline").trigger("registerCommand", ["cinema", this.handleCommand.bind(this)])
         },
+        // Added by Quigly
+        // Adds HTML span element to the cheat header so emotes can be toggled while in
+        // cinemamode.
+        updateEmoteBtnLocation(){
+          // $('<span class="label pull-right pointer inlineemote" id="emotelistbtn" onclick="EMOTELISTMODAL.modal();" style="visibility: hidden;">Emotes	<span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
+
+          var ebtn = $('<span>').attr("id", "emotelistbtn").attr("style", "visibility: hidden;").addClass("label pull-right pointer inlineemote").text("Emotes").attr("onclick", "EMOTELISTMODAL.modal()");
+
+          var gicon = $('<span>').addClass("glyphicon glyphicon-picture").appendTo("#emotelistbtn");
+
+          var allTogetherNow = ebtn.appendTo("#chatheader");
+        },
         loadStyle: function() {
             $.ajax(this.host).done((data=>{
                 this.createButtons();
                 this.createStyle(data);
                 this.registerCommand();
+                updateEmoteBtnLocation();
                 if (localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`) !== null) {
                     if (parseInt(localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`))) {
                         $("body").addClass("cinema-nopoll")
