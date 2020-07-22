@@ -139,14 +139,15 @@ function toggleChat() {
           ebtn.text("Emotes");
           ebtn.attr("onclick", "EMOTELISTMODAL.modal()");
 
-          var gicon = $('<span>').addClass("glyphicon glyphicon-picture").appendTo("#emotelistbtn");
+          var gicon = $('<span>').addClass("glyphicon glyphicon-picture");
+          gicon.appentTo("#emotelistbtn")
         },
         loadStyle: function() {
             $.ajax(this.host).done((data=>{
                 this.createButtons();
                 this.createStyle(data);
                 this.registerCommand();
-                this.updateEmoteBtnLocation().appendTo("#chatheader");
+                this.updateEmoteBtnLocation();
                 if (localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`) !== null) {
                     if (parseInt(localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`))) {
                         $("body").addClass("cinema-nopoll")
