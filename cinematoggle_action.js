@@ -136,7 +136,7 @@ function toggleChat() {
 
           var ebtn = $('<span>').attr("id", "emotelistbtn").attr("style", "visibility: hidden;").addClass("label pull-right pointer inlineemote").text("Emotes").attr("onclick", "EMOTELISTMODAL.modal()");
 
-          var gicon = $('<span>').addClass("glyphicon glyphicon-picture").appendTo("#emotelistbtn");
+          var gicon = $('<span>').addClass("glyphicon glyphicon-picture").appendTo(".inlineemote");
 
           var allTogetherNow = ebtn.appendTo("#chatheader");
         },
