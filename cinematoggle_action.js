@@ -140,7 +140,8 @@ function toggleChat() {
           ebtn.attr("onclick", "EMOTELISTMODAL.modal()");
 
           var gicon = $('<span>').addClass("glyphicon glyphicon-picture");
-          gicon.appentTo("#emotelistbtn")
+          gicon.appendTo("#emotelistbtn");
+          ebtn.appendTo("#chatheader");
         },
         loadStyle: function() {
             $.ajax(this.host).done((data=>{
