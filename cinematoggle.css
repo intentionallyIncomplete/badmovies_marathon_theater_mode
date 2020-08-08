@@ -50,7 +50,7 @@ body.cinemachat.synchtube #cinematoggle {
 body.cinemachat #chatwrap {
     position: fixed !important;
     padding: 0px !important;
-    width: 400px !important;
+    width: 20% !important;
     margin-top: 2%;
     bottom: 0px !important;
     height: 80%;
@@ -88,7 +88,7 @@ body.cinemachat #videowrap {
     z-index: 3000 !important;
     background-color: black;
     height: 100% !important;
-    width: calc(100% - 400px) !important;
+    width: 80% !important;
 }
 
 body.cinemachat:not(.synchtube) #videowrap { right: 0 !important; }
