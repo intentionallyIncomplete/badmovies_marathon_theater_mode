@@ -19,6 +19,14 @@ body {
   background-size: 100% !important;
 }
 
+.userlist_item {
+    text-shadow: 0 0 7px !important;
+    background-image: url("https://www.flaticon.com/svg/static/icons/svg/2068/2068566.svg");
+    background-size: 25px;
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
 .userlist_siteadmin {
   color: #add110 !important;
   /* text-shadow: 0px 0px 10px !important; */
