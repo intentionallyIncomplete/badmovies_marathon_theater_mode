@@ -6,6 +6,54 @@
 **@preserve
 */
 // Minor modifications made by Quigly for the BadMovies Cytube channel.
+/*_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_*/
+/*!
+* Custom Theme Injection by Quigly the Archivist
+* This script adds custom theme options to the already existing default ones.
+* @preserve
+*/
+
+let hween = document.createElement("option");
+
+hween.text = "Halloween";
+hween.value = "https://raw.githack.com/intentionallyIncomplete/quiglys_movie_repo/master/custom_themes/halloween_theme.css";
+
+$("#us-theme").append(hween);
+
+(function () {
+  var c = document.cookie.split(";").map(function (s) {
+    return s.trim();
+  });
+
+  // Set in the head template.
+  var theme = DEFAULT_THEME;
+  for (var i = 0; i < c.length; i++) {
+    if (c[i].indexOf("cytube-theme=") === 0) {
+      theme = c[i].split("=")[1];
+      break;
+    }
+  }
+
+  if (theme == null || !theme.match(/^\/css\/themes\/.+?.css$/)) {
+    return;
+  }
+
+  if (theme !== DEFAULT_THEME) {
+    console.info("THEME COOKIE:", theme);
+    var cur = document.getElementById("usertheme");
+    cur.parentNode.removeChild(cur);
+    var css = document.createElement("link");
+    css.setAttribute("rel", "stylesheet");
+    css.setAttribute("type", "text/css");
+    css.setAttribute("href", theme);
+    css.setAttribute("id", "usertheme");
+    document.head.appendChild(css);
+  }
+})();
+
+/*____________________________________*/
+//  BEGIN CINEMA-MODE CONFIGURATION  //
+/*____________________________________*/
 "use strict";
 function removeUntilNext() {
     socket.once("changeMedia", unremoveVideo);
@@ -77,10 +125,8 @@ function toggleChat() {
         $('a[onclick*="chatOnly"]').parent().after($("<li>").append($("<a>").attr("href", "javascript:void(0)").attr("onclick", "javascript:toggleChat()").text("Remove Chat")))
     }
     ({
-      // Updated to using GitHack for faster delivery.
-        // host: "https://gitcdn.link/cdn/intentionallyIncomplete/quiglys_movie_repo/259f469d860d912862f51efb077ef8e065666a5f/cinematoggle.css",
 
-        host: "https://raw.githack.com/intentionallyIncomplete/quiglys_movie_repo/master/cinematoggle.css",
+        host: "https://raw.githack.com/intentionallyIncomplete/personal_cytube_movie_repo/master/cinematoggle.css",
         initialize: function() {
             if (CLIENT.cinemaMode) {
                 return
@@ -131,14 +177,7 @@ function toggleChat() {
         // Added by Quigly
         // Adds HTML span element to the cheat header so emotes can be toggled while in cinemamode.
         updateEmoteBtnLocation()  {
-          $('<span id="emotelistbtn" style="visibility: hidden;" onClick="EMOTELISTMODAL.modal()" class="label pull-right pointer inlineemote">Emotes <span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
-        },
-        // Added by Quigly
-        // Removes the 'pull-right' attribute from they
-        // buttons because they're no longer effective with
-        //the new flex attributes.
-        removeFloatAttribute() {
-          $(".label-success").removeAttribute("pull-right");
+          $('<span id="emotelistbtn" style="visibility: hidden;" onClick="EMOTELISTMODAL.modal()" class="label pointer inlineemote">Emotes <span class="glyphicon glyphicon-picture"></span></span>').appendTo("#chatheader");
         },
         loadStyle: function() {
             $.ajax(this.host).done((data=>{
@@ -146,7 +185,6 @@ function toggleChat() {
                 this.createStyle(data);
                 this.registerCommand();
                 this.updateEmoteBtnLocation();
-                this.removeFloatAttribute();
                 if (localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`) !== null) {
                     if (parseInt(localStorage.getItem(`${CHANNEL.name}_cinemaHidePolls`))) {
                         $("body").addClass("cinema-nopoll")
