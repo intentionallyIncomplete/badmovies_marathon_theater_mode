@@ -60,7 +60,7 @@
 #footer { display: none !important; }
 
 /* Hide login forms */
-#nav-collapsible > div { display: none !important; }
+#logoutform { display: none; }
 
 #guestlogin > .form-control,
 #guestlogin > .input-group-addon,
@@ -68,7 +68,7 @@
 
 #modflair { padding: 0 0.5em; font-size: 14px; font-weight: unset; line-height: unset; border-radius: unset; }
 
-#emotelistbtn\ newemotebtn {
+.btn.btn-sm.btn-default.newemotebtn {
   font-weight: unset !important;
   line-height: unset !important;
   padding: 0px 2.5rem 0 2.5rem !important;
@@ -78,7 +78,15 @@
   font-size: 14px !important;
 }
 
-.drinkWrapToggle #drinkcount {
-  margin: 0;
-  padding: 0.5rem 0 0 1rem;
+#drinkcount {
+  background-color: unset !important;
+  margin: 0 !important;
+  padding: 0.5rem 0 0 1rem !important;
+  text-align: start;
+  font-size: unset;
+}
+
+#drinkbarwrap {
+  display: inherit;
+  float: left;
 }
