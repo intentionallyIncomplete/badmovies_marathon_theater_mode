@@ -87,6 +87,6 @@
 }
 
 #drinkbarwrap {
-  display: inherit;
-  float: left;
+  display: inherit !important;
+  float: left !important;
 }
