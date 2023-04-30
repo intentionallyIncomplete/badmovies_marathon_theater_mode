@@ -82,11 +82,11 @@
   background-color: unset !important;
   margin: 0 !important;
   padding: 0.5rem 0 0 1rem !important;
-  text-align: start !important;
-  font-size: unset !important;
+  text-align: start;
+  font-size: unset;
 }
 
 #drinkbarwrap {
-  display: inherit !important;
-  float: left !important;
+  display: inherit;
+  float: left;
 }
