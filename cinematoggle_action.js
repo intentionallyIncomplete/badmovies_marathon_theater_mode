@@ -1,3 +1,6 @@
+// NO LONGER IN USE - DEPRECIATED
+// REPLACED WITH SCRIPT IN TAMPERMONKEY/GREASEMONKEY
+
 /*!
 **|   Extended Layout Options
 **|   Copyright Xaekai 2014 - 2016
