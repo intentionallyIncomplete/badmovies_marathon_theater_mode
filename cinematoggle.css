@@ -1,3 +1,6 @@
+/* DEPRECIATED - NO LONGER IN USE
+REPLACED BY theater_mode.css */
+
 body.cinemachat #motdwrap     { display: none; }
 body.cinemachat #queue        { display: none; }
 body.cinemachat #footer       { display: none; }
